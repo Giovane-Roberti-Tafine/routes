@@ -9,7 +9,7 @@ import { map, delay } from 'rxjs/operators';
 export class DvdService {
 
     private dvdSubject$: BehaviorSubject<Dvd[]> = new BehaviorSubject<Dvd[]>([]);
-    private dvd$ = this.dvdSubject$.asObservable();
+    public dvds$ = this.dvdSubject$.asObservable();
 
     constructor() {
         timer(2000)
@@ -21,19 +21,19 @@ export class DvdService {
             });
     }
 
-    addBook(dvd: Dvd) {
+    addDvd(dvd: Dvd) {
         let dvds = this.dvdSubject$.getValue();
         dvds.push(dvd);
     }
 
-    removeBook(index: number) {
-        let books = this.dvdSubject$.getValue();
-        if (index >= 0 && index < books.length) {
-            books.splice(index, 1);
+    removeDvd(index: number) {
+        let dvds = this.dvdSubject$.getValue();
+        if (index >= 0 && index < dvds.length) {
+            dvds.splice(index, 1);
         }
     }
 
-    getBook(index: number): Observable<Dvd | null> {
+    getDvd(index: number): Observable<Dvd | null> {
         return this.dvdSubject$.pipe(
             map(dvd => (index >= 0 && index < dvd.length) ? dvd[index] : null),
             delay(1000)

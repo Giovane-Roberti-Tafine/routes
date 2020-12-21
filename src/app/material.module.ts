@@ -44,6 +44,8 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
     imports: [],
@@ -52,7 +54,7 @@ import { MatIconModule } from '@angular/material/icon';
         // MatBadgeModule,
         // MatBottomSheetModule,
         MatButtonModule,
-        // MatFormFieldModule,
+        MatFormFieldModule,
         // MatButtonToggleModule,
         // MatCardModule,
         // MatCheckboxModule,
@@ -69,7 +71,7 @@ import { MatIconModule } from '@angular/material/icon';
         // MatNativeDateModule,
         // MatPaginatorModule,
         // MatProgressBarModule,
-        // MatProgressSpinnerModule,
+        MatProgressSpinnerModule,
         // MatRadioModule,
         // MatRippleModule,
         // MatSelectModule,

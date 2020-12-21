@@ -1,15 +1,29 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Dvd } from '../models/dvd';
+import { DvdService } from '../services/dvd.service';
 
 @Component({
-  selector: 'app-dvd',
-  templateUrl: './dvd.component.html',
-  styleUrls: ['./dvd.component.css']
+    selector: 'app-dvd',
+    templateUrl: './dvd.component.html',
+    styleUrls: ['./dvd.component.css']
 })
 export class DvdComponent implements OnInit {
 
-  constructor() { }
+    dvds$!: Observable<Dvd[]>;
 
-  ngOnInit(): void {
-  }
+    constructor(
+        private devSerivce: DvdService,
+        private router: Router
+    ) { }
+
+    ngOnInit(): void {
+        this.dvds$ = this.devSerivce.dvds$;
+    }
+
+    goDetails(index: number, dvd: Dvd) {
+        this.router.navigate([`dvds/${index}`, { title: dvd.title }]);
+    }
 
 }
