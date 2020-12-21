@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { DvdService } from 'src/app/services/dvd.service';
 
 @Component({
     selector: 'app-dvd-form',
@@ -14,10 +16,21 @@ export class DvdFormComponent implements OnInit {
         'genre': ['']
     });
     constructor(
-        private fb: FormBuilder
+        private fb: FormBuilder,
+        private dvdService: DvdService,
+        private router: Router
     ) { }
 
     ngOnInit(): void {
+    }
+
+    onSubmit(): void {
+        this.dvdService.addDvd(this.formDvd.value);
+        this.router.navigate(['/dvds']);
+    }
+
+    goBack(): void {
+        this.router.navigate(['/dvds']);
     }
 
 }

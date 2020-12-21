@@ -22,8 +22,12 @@ export class DvdComponent implements OnInit {
         this.dvds$ = this.devSerivce.dvds$;
     }
 
-    goDetails(index: number, dvd: Dvd) {
+    goDetails(index: number, dvd: Dvd): void {
         this.router.navigate([`dvds/${index}`, { title: dvd.title }]);
+    }
+
+    removeDvd(index: number): void {
+        this.devSerivce.removeDvd(index);
     }
 
 }

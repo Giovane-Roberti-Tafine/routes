@@ -13,6 +13,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { DvdDetailComponent } from './dvd/dvd-detail/dvd-detail.component';
 import { DvdFormComponent } from './dvd/dvd-form/dvd-form.component';
 
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+
 // const appRoutes: Routes = [
 //     { path: 'dvds', component: DvdComponent },
 //     { path: 'books', component: BookComponent },
@@ -21,22 +23,25 @@ import { DvdFormComponent } from './dvd/dvd-form/dvd-form.component';
 // ]
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    BookComponent,
-    DvdComponent,
-    PageNotFoundComponent,
-    DvdDetailComponent,
-    DvdFormComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    // RouterModule.forRoot(appRoutes),
-    AppRoutingModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        BookComponent,
+        DvdComponent,
+        PageNotFoundComponent,
+        DvdDetailComponent,
+        DvdFormComponent,
+
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        // RouterModule.forRoot(appRoutes),
+        AppRoutingModule,
+        ReactiveFormsModule,
+        FormsModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
