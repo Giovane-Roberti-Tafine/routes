@@ -14,6 +14,7 @@ import { DvdDetailComponent } from './dvd/dvd-detail/dvd-detail.component';
 import { DvdFormComponent } from './dvd/dvd-form/dvd-form.component';
 
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { BookDetailComponent } from './book/book-detail/book-detail.component';
 
 // const appRoutes: Routes = [
 //     { path: 'dvds', component: DvdComponent },
@@ -30,6 +31,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
         PageNotFoundComponent,
         DvdDetailComponent,
         DvdFormComponent,
+        BookDetailComponent,
 
     ],
     imports: [
