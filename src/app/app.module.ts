@@ -42,11 +42,11 @@ import { ElectronicsModule } from './electronics/electronics.module';
         BrowserAnimationsModule,
         MaterialModule,
         // RouterModule.forRoot(appRoutes),
-        ElectronicsModule,
+        // ElectronicsModule Comentando aqui pois para fazer o Lazy Loading ele não pode carregar diretamente,
         AppRoutingModule,
         ReactiveFormsModule,
         FormsModule,
-        // ElectronicsModule
+        // ElectronicsModule Comentando aqui pois ao criar ele é inserido por ultimo
     ],
     providers: [],
     bootstrap: [AppComponent]

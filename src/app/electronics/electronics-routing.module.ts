@@ -4,8 +4,10 @@ import { ElectronicDetailComponent } from './electronic-list/electronic-detail/e
 import { ElectronicListComponent } from './electronic-list/electronic-list.component';
 
 const routes: Routes = [
-    { path: 'electronics', component: ElectronicListComponent },
-    { path: 'electronics/:index', component: ElectronicDetailComponent }
+    // { path: 'electronics', component: ElectronicListComponent },
+    // { path: 'electronics/:index', component: ElectronicDetailComponent }
+    { path: '', component: ElectronicListComponent },
+    { path: ':index', component: ElectronicDetailComponent }
 ];
 
 @NgModule({
