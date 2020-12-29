@@ -16,6 +16,7 @@ import { DvdFormComponent } from './dvd/dvd-form/dvd-form.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BookDetailComponent } from './book/book-detail/book-detail.component';
 import { BookAuthorsComponent } from './book/book-authors/book-authors.component';
+import { ElectronicsModule } from './electronics/electronics.module';
 
 // const appRoutes: Routes = [
 //     { path: 'dvds', component: DvdComponent },
@@ -41,9 +42,11 @@ import { BookAuthorsComponent } from './book/book-authors/book-authors.component
         BrowserAnimationsModule,
         MaterialModule,
         // RouterModule.forRoot(appRoutes),
+        ElectronicsModule,
         AppRoutingModule,
         ReactiveFormsModule,
-        FormsModule
+        FormsModule,
+        // ElectronicsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
