@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map, switchMap, tap } from 'rxjs/operators';
+import { filter, map, switchMap, tap } from 'rxjs/operators';
 import { Book } from 'src/app/models/book';
 import { BookService } from 'src/app/services/book.service';
 
@@ -14,6 +14,7 @@ export class BookDetailComponent implements OnInit {
 
     book$!: Observable<Book | null>;
     index!: string;
+    authors!: string[];
 
     constructor(
         private bookService: BookService,
@@ -42,13 +43,19 @@ export class BookDetailComponent implements OnInit {
                 tap((params: ParamMap) => {
                     this.index = params.get('index') ?? '';
                 }),
-                switchMap(() => this.bookService.getBook(parseInt(this.index)))
+                switchMap(() => this.bookService.getBook(parseInt(this.index))),
+                tap((book) => this.authors = book?.authors ?? [])
             );
     }
 
     remove(): void {
         this.bookService.removeBook(parseInt(this.index));
-        this.router.navigate(['books']);
+        this.router.navigateByUrl('books');
+    }
+
+    goAuthors(): void {
+        let url = '/books/' + this.index + '/authors';
+        this.router.navigate([url, { authors: this.authors }]);
     }
 
 }

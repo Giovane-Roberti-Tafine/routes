@@ -15,6 +15,7 @@ import { DvdFormComponent } from './dvd/dvd-form/dvd-form.component';
 
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BookDetailComponent } from './book/book-detail/book-detail.component';
+import { BookAuthorsComponent } from './book/book-authors/book-authors.component';
 
 // const appRoutes: Routes = [
 //     { path: 'dvds', component: DvdComponent },
@@ -32,6 +33,7 @@ import { BookDetailComponent } from './book/book-detail/book-detail.component';
         DvdDetailComponent,
         DvdFormComponent,
         BookDetailComponent,
+        BookAuthorsComponent,
 
     ],
     imports: [
